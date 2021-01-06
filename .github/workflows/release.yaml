@@ -2,10 +2,10 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      loopchain:
-        description: 'loopchain tag'
+      rosetta:
+        description: 'test tag'
         required: true
-        default: '2.7.1'
+        default: 'main'
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -13,9 +13,9 @@ jobs:
       - name: checkout loopchain
         uses: actions/checkout@v2
         with:
-          repository: checkout loopchain
-          ref: ${{ github.event.inputs.loopchain }}
-          path: loopchain
+          repository: leeheonseung/rosetta-icon
+          ref: ${{ github.event.inputs.rosetta }}
+          path: rosetta-icon
       - name: check
         run: |
           ls -al
