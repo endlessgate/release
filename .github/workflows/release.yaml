@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout loopchain
-      - uses: actions/checkout@v2
-      - with:
+        uses: actions/checkout@v2
+        with:
           repository: checkout loopchain
           ref: ${{ github.event.inputs.loopchain }}
           path: loopchain
-          run: |
-            ls -al
+      - name: check
+        run: |
+          ls -al
