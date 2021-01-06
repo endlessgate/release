@@ -21,8 +21,8 @@ jobs:
         python-version: [3.7]
     steps:
       # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Checkout release
-        uses: actions/checkout@v2
+#       - name: Checkout release
+#         uses: actions/checkout@v2
 
       # Runs the Super-Linter action
       - name: Checkout loopchain
