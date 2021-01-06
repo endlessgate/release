@@ -1,10 +1,11 @@
-name: learn-github-actions
+name: Release
 on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout loopchain
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - with:
+          repository: checkout loopchain
+          path: loopchain
