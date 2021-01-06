@@ -1,11 +1,18 @@
 name: Release
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      loopchain:
+        description: 'loopchain tag'
+        required: true
+        default: '2.7.1'
 jobs:
-  check-bats-version:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: checkout loopchain
       - uses: actions/checkout@v2
       - with:
           repository: checkout loopchain
+          ref: ${{ github.event.inputs.loopchain }}
           path: loopchain
