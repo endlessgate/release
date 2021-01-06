@@ -16,3 +16,5 @@ jobs:
           repository: checkout loopchain
           ref: ${{ github.event.inputs.loopchain }}
           path: loopchain
+          run: |
+            ls -al
