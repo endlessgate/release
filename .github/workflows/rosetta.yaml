@@ -5,7 +5,7 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
       - name: Setup Go
         uses: actions/setup-go@v2
@@ -26,3 +26,9 @@ jobs:
 
       - name: Check
         run: ls -al
+
+      - name: Upload Executable
+        uses: actions/upload-artifact@v1
+        with:
+          name: rosetta-icon
+          key: ./rosetta-icon
