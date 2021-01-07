@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   release:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Setup Go
         uses: actions/setup-go@v2
