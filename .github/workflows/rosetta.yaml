@@ -22,7 +22,7 @@ jobs:
         run: go get .
         
       - name: Build
-        run: go build .
+        run: make
         
       - name: Check
         run: ls -al
