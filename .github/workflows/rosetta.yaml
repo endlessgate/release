@@ -2,10 +2,15 @@ name: Rosetta Release
 
 on:
   push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
   
 jobs:
-  release:
-    runs-on: ubuntu-latest
+  set-up:
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
       - name: Setup Go
         uses: actions/setup-go@v2
@@ -17,7 +22,10 @@ jobs:
         with:
           repository: leeheonseung/rosetta-icon
           ref: main
-      
+  build:
+    runs-on: [ubuntu-latest, macos-latest]
+    needs: set-up
+    steps:
       - name: Install packages
         run: go get .
       
@@ -26,7 +34,11 @@ jobs:
       
       - name: Build
         run: make
-        
+  upload:
+    runs-on: [ubuntu-latest, macos-latest]
+    if: always()
+    needs: [set-up, build]
+    steps:      
       - name: Upload Executable
         uses: actions/upload-artifact@v1
         with:
