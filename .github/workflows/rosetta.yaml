@@ -1,6 +1,8 @@
 name: Rosetta Release
+
 on:
   push:
+  
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -21,12 +23,6 @@ jobs:
         
       - name: Build
         run: go build .
-
+        
       - name: Check
         run: ls -al
-
-      - name: Upload Executable
-        uses: actions/upload-artifact@v1
-        with:
-          name: rosetta-icon
-          key: ./rosetta-icon
