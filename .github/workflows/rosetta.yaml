@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: rosetta-icon
-          path: ./rosetta-icon
+          path: ./bin/rosetta-icon
