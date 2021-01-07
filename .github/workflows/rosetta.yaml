@@ -1,8 +1,6 @@
 name: Rosetta Release
-
 on:
   push:
-
 jobs:
   release:
     runs-on: [ubuntu-latest, macos-latest]
