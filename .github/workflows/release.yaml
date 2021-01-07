@@ -19,4 +19,5 @@ jobs:
           path: rosetta-icon
       - name: check
         run: |
+          make
           ls -al
