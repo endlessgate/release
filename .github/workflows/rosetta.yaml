@@ -20,12 +20,12 @@ jobs:
       
       - name: Install packages
         run: go get .
-        
+      
+      - name: Check
+        run: pwd
+      
       - name: Build
         run: make
-        
-      - name: Check
-        run: ls -al
         
       - name: Upload Executable
         uses: actions/upload-artifact@v1
