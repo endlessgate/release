@@ -16,6 +16,7 @@ jobs:
           repository: leeheonseung/rosetta-icon
           ref: main
         
-      - name: check
+      - name: Build
         run: |
-          go build .
+          go get .
+          make
