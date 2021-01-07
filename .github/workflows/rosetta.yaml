@@ -1,6 +1,8 @@
-name: Release
+name: Rosetta Release
+
 on:
   push:
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,8 +17,9 @@ jobs:
         with:
           repository: leeheonseung/rosetta-icon
           ref: main
+      
+      - name: Install packages
+        run: go get .
         
       - name: Build
-        run: |
-          go get .
-          make
+        run: make
