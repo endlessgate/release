@@ -10,7 +10,7 @@ on:
   
 jobs:
   set-up:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Setup Go
         uses: actions/setup-go@v2
@@ -23,7 +23,7 @@ jobs:
           repository: leeheonseung/rosetta-icon
           ref: main
   build:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     needs: set-up
     steps:
       - name: Install packages
@@ -35,7 +35,7 @@ jobs:
       - name: Build
         run: make
   upload:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     if: always()
     needs: [set-up, build]
     steps:      
