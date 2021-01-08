@@ -9,7 +9,7 @@ on:
       - main
   
 jobs:
-  set-up:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Go
@@ -37,3 +37,10 @@ jobs:
         with:
           name: rosetta-icon
           path: ./bin/rosetta-icon
+  tests:
+    runs-on: [ubuntu-latest, macos-latest]
+    steps:
+      - name: Download Executable
+        uses: actions/download-artifact@v2
+        with:
+          name: rosetta-icon
